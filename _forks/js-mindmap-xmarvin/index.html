@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Kenneth Kufluk 2008/09/10 -->
+    <title>js-mindmap demo - JavaScript Mindmap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="js-mindmap.css"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+
+    <link type="text/css" href="css/smoothness/jquery-ui-1.8.18.custom.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="js/node.js"></script>
+
+    <!-- Raphael for SVG support (won't work on android) -->
+    <script type="text/javascript" src="raphael-min.js"></script>
+
+    <!-- Mindmap -->
+    <script type="text/javascript" src="js-mindmap.js"></script>
+    <script type="text/javascript" src="js/jquery.simpleColor.js"></script>
+    <!-- Kick everything off -->
+    <script src="script.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.color').simpleColor({			cellWidth: 9,			cellHeight: 9,			border: '1px solid #333333',			buttonClass: 'button'	});	
+	});
+</script>
+</head>
+<body>
+<ul>
+    <li><a href="#">Сайт магистра</a>
+        <ul>
+            <li><a href="#" target="_blank" class="icon twitter">Фото</a>
+			<ul>                           
+						<li><a href="#">360x480</a></li>
+						<li><a href="#">180x240</a></li>
+						<li><a href="#">90x120</a></li>
+					</ul>
+			</li>
+            <li><a href="#" target="_blank" class="icon linkedin">Реферат</a>
+				<ul>
+				  <li><a href="#">Язык</a>
+					<ul>                           
+						<li><a href="#">Русский</a></li>
+						<li><a href="#">Английский</a></li>
+						<li><a href="#">Украинский</a></li>
+					</ul>
+				</li>
+				
+				</ul>
+			
+            </li>
+            <li><a href="#" target="_blank" class="icon facebook">Источники</a>
+			
+					<ul>                           
+						<li><a href="#">в реферате(>=7)</a></li>
+						<li><a href="#">в библиотеке (>=10)</a></li>
+						<li><a href="#">ссылки (>=50)</a></li>
+					</ul>
+			</li>
+            <li><a href="#" target="_blank" class="icon rss">Анимация</a>
+				<ul>                           
+						<li><a href="#">размер 150 Кб</a></li>
+						<li><a href="#">не меньше 7 слайдов</a></li>
+						<li><a href="#">5 циклов повторения</a></li>
+					</ul>
+			    
+			</li>
+			 <li><a href="#" target="_blank" class="icon rss">Биография</a>
+				<ul>                           
+						<li><a href="#">На русском</a></li>
+						<li><a href="#">На украинском</a></li>
+
+					</ul>
+			    
+			</li>
+			
+			 <li><a href="#" target="_blank" class="icon rss">Резюме</a>
+				<ul>                           
+						<li><a href="#">На русском</a></li>
+						<li><a href="#">На украинском</a></li>
+						<li><a href="#">На английском</a></li>
+
+					</ul>
+			    
+			</li>
+
+                    
+        </ul>
+    </li>
+</ul>
+
+<div style="display:none">
+    <div id="details" class="details">
+        <ul class='children'>
+        </ul>
+
+        <form id = "edit_node">
+            <input type="text" class="name">
+           
+			<input class="color" value="#cc3333" style="display: none; ">
+            <button>Сохранить</button>
+        </form>
+
+        <form id = "add_child_form">
+            <input type="text" class="name">
+            <button class="add_child">Добавить</button>
+        </form>
+        <button class="remove">Удалить</button>
+    </div>
+</div>
+</body>
+</html>
