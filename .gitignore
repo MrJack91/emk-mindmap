@@ -1,11 +1,10 @@
-
+# ignore apple stuff
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -20,3 +19,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# php storm
+.idea/
+
+# other stuff
+_forks/
