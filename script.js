@@ -17,11 +17,16 @@ $(document).ready(function() {
 
     var addLI = function() {
         var parentnode = $(this).parents('li').get(0);
-        if (typeof(parentnode)=='undefined') parentnode=root;
-        else parentnode=parentnode.mynode;
+        if (typeof(parentnode) == 'undefined') {
+            parentnode = root;
+        } else {
+            parentnode = parentnode.mynode;
+        }
 
-        this.mynode = $('body').addNode(parentnode, $('a:eq(0)',this).text(), {
-//          href:$('a:eq(0)',this).text().toLowerCase(),
+        // add parentnode
+        this.mynode = $('body').addNode(parentnode,
+            $('a:eq(0)', this).text(), {
+            // href:$('a:eq(0)',this).text().toLowerCase(),
             href:$('a:eq(0)',this).attr('href'),
             onclick:function(node) {
                 $(node.obj.activeNode.content).each(function() {
@@ -35,8 +40,14 @@ $(document).ready(function() {
         $(this).hide();
         $('>ul>li', this).each(addLI);
     };
+
     $('body>ul>li>ul').each(function() {
         $('>li', this).each(addLI);
+    });
+
+    // register all dialogs
+    $('li>a[attr]').bind('click', function () {
+        console.log(this);
     });
 
 });   
